@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{60CF62CA-5D26-4B35-9559-08D3B2398A75}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MLearning.Store</RootNamespace>
+    <AssemblyName>MLearning.Store</AssemblyName>
+    <DefaultLanguage>es</DefaultLanguage>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>MLearning.Store_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>99B72D32F8BCBCEF8717C0005EA1253504F44563</PackageCertificateThumbprint>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>x86</AppxBundlePlatforms>
+    <AppxBundle>Always</AppxBundle>
+    <NuGetPackageImportStamp>d43baab3</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\CommunitySqlitePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Components\AnimatedImage.cs" />
+    <Compile Include="Components\CircleScrollView.cs" />
+    <Compile Include="Components\CommentsContainer.cs" />
+    <Compile Include="Components\Constants.cs" />
+    <Compile Include="Components\GridResource.cs" />
+    <Compile Include="Components\HomeWorkList.cs" />
+    <Compile Include="Components\HorizontalLoading.cs" />
+    <Compile Include="Components\InfoControl.cs" />
+    <Compile Include="Components\LoadingView.cs" />
+    <Compile Include="Components\LOContainer.cs" />
+    <Compile Include="Components\LoginGrid.cs" />
+    <Compile Include="Components\LOItem.cs" />
+    <Compile Include="Components\MLFadeImage.cs" />
+    <Compile Include="Components\PopupView.cs" />
+    <Compile Include="Components\UpMenuController.cs" />
+    <Compile Include="DataSource\BookDataSource.cs" />
+    <Compile Include="DataSource\ChapterDataSource.cs" />
+    <Compile Include="DataSource\PageDataSource.cs" />
+    <Compile Include="DataSource\SectionDataSource.cs" />
+    <Compile Include="DebugTrace.cs" />
+    <Compile Include="File\AsyncStorageStoreService.cs" />
+    <Compile Include="MLReader\BackgroundElement.cs" />
+    <Compile Include="MLReader\BackgroundScroll.cs" />
+    <Compile Include="MLReader\LOReaderScroll.cs" />
+    <Compile Include="MLReader\LOReaderScrollElement.cs" />
+    <Compile Include="MLReader\ManipulablePages\AnimatedBorderImage.cs" />
+    <Compile Include="MLReader\ManipulablePages\IconSlideBar.cs" />
+    <Compile Include="MLReader\MLManipulationArgs.cs" />
+    <Compile Include="MLReader\StylesConstants.cs" />
+    <Compile Include="MLReader\ISlideElement.cs" />
+    <Compile Include="MLReader\LOItemSource.cs" />
+    <Compile Include="MLReader\LOPageSource.cs" />
+    <Compile Include="MLReader\LOPageViewer.cs" />
+    <Compile Include="MLReader\LOReaderView.cs" />
+    <Compile Include="MLReader\LOSlideSource.cs" />
+    <Compile Include="MLReader\LOSlideStyle.cs" />
+    <Compile Include="MLReader\ManipulablePages\LeftAvatarSlide.cs" />
+    <Compile Include="MLReader\ManipulablePages\ManipulableImageCollection.cs" />
+    <Compile Include="MLReader\ManipulablePages\RightAvatarSlide.cs" />
+    <Compile Include="MLReader\ManipulablePages\SingleManipulableImage.cs" />
+    <Compile Include="MLReader\ManipulableScroll.cs" />
+    <Compile Include="MLReader\MultiTextScroll.cs" />
+    <Compile Include="MLReader\TextPages\CoverTextSlide.cs" />
+    <Compile Include="MLReader\TextPages\ItemizeTextElement.cs" />
+    <Compile Include="MLReader\TextPages\LeftTextElement.cs" />
+    <Compile Include="MLReader\TextPages\QuoteTextElement.cs" />
+    <Compile Include="MLReader\TextPages\RigthTextElement.cs" />
+    <Compile Include="MLReader\ManipulablePages\TopSlideElement.cs" />
+    <Compile Include="MLStyles\MLColorStyle.cs" />
+    <Compile Include="MLStyles\StaticStyles.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="StackView\ChapterHeaderControl.cs" />
+    <Compile Include="StackView\ControlDownElement.cs" />
+    <Compile Include="StackView\ControlDownMenu.cs" />
+    <Compile Include="StackView\ControlScrollView.cs" />
+    <Compile Include="StackView\IGroupList.cs" />
+    <Compile Include="StackView\IStackItem.cs" />
+    <Compile Include="StackView\IStackList.cs" />
+    <Compile Include="StackView\IStackView.cs" />
+    <Compile Include="StackView\Util.cs" />
+    <Compile Include="Views\CreateAccountView.xaml.cs">
+      <DependentUpon>CreateAccountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FirstView.xaml.cs">
+      <DependentUpon>FirstView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LOView.xaml.cs">
+      <DependentUpon>LOView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="MLearning.Store_StoreKey.pfx" />
+    <None Include="MLearning.Store_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\150.png" />
+    <Content Include="Assets\24.scale-100.png" />
+    <Content Include="Assets\24.scale-140.png" />
+    <Content Include="Assets\24.scale-180.png" />
+    <Content Include="Assets\30.png" />
+    <Content Include="Assets\310.scale-100.png" />
+    <Content Include="Assets\310x150.scale-100.png" />
+    <Content Include="Assets\33.png" />
+    <Content Include="Assets\43.png" />
+    <Content Include="Assets\70.scale-100.png" />
+    <Content Include="Assets\finalsplash0.png" />
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\logo50.png" />
+    <Content Include="Assets\logo70.png" />
+    <Content Include="Assets\logo90.png" />
+    <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="ToDo-MvvmCross\_ Windows Store UI.txt" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Assets\StoreLogo.scale-140.png" />
+    <Content Include="Assets\StoreLogo.scale-180.png" />
+    <Content Include="MLReader\leftimg.png" />
+    <Content Include="MLReader\rightimg.png" />
+    <Content Include="Resources\adelante.png" />
+    <Content Include="Resources\arrow_left.png" />
+    <Content Include="Resources\arrow_right.png" />
+    <Content Include="Resources\atras.png" />
+    <Content Include="Resources\backgroundlogin.png" />
+    <Content Include="Resources\backgrounds\alternativas.png" />
+    <Content Include="Resources\backgrounds\flora.png" />
+    <Content Include="Resources\backgrounds\machupicchu.png" />
+    <Content Include="Resources\backgrounds\salkantay.png" />
+    <Content Include="Resources\back_icon.png" />
+    <Content Include="Resources\boton.png" />
+    <Content Include="Resources\brackgroundlogin.jpg" />
+    <Content Include="Resources\doublearrow.png" />
+    <Content Include="Resources\formback.png" />
+    <Content Include="Resources\grilla.png" />
+    <Content Include="Resources\logo.png" />
+    <Content Include="Resources\logo2.png" />
+    <Content Include="Resources\logo\logo-0.png" />
+    <Content Include="Resources\logo\logo-1.png" />
+    <Content Include="Resources\logo\logo-2.png" />
+    <Content Include="Resources\logo\logo-3.png" />
+    <Content Include="Resources\menu\CIRCULO.png" />
+    <Content Include="Resources\menu\HELP.png" />
+    <Content Include="Resources\menu\HOME.png" />
+    <Content Include="Resources\menu\SEARCH.png" />
+    <Content Include="Resources\menu\SHARE.png" />
+    <Content Include="Resources\muromock.png" />
+    <Content Include="Resources\muro\fondo.png" />
+    <Content Include="Resources\muro\graypop.png" />
+    <Content Include="Resources\muro\greencircle.png" />
+    <Content Include="Resources\muro\greenpop.png" />
+    <Content Include="Resources\muro\logo.png" />
+    <Content Include="Resources\muro\logos\logo_ml-11.png" />
+    <Content Include="Resources\muro\logos\logo_ml-12.png" />
+    <Content Include="Resources\muro\logos\logo_ml-13.png" />
+    <Content Include="Resources\muro\logos\logo_ml-14.png" />
+    <Content Include="Resources\muro\searchback.png" />
+    <Content Include="Resources\muro\tareas\barra_curso.png" />
+    <Content Include="Resources\muro\tareas\barra_unidad.png" />
+    <Content Include="Resources\muro\tareas\btn_back.png" />
+    <Content Include="Resources\muro\tareas\btn_open.png" />
+    <Content Include="Resources\muro\tareas\btn_reload.png" />
+    <Content Include="Resources\muro\tareas\btn_send.png" />
+    <Content Include="Resources\muro\tareas\cboard.png" />
+    <Content Include="Resources\muro\tareas\circulo.png" />
+    <Content Include="Resources\muro\tareas\complete_icon.png" />
+    <Content Include="Resources\muro\tareas\incomplete_icon.png" />
+    <Content Include="Resources\muro\tareas\linea.png" />
+    <Content Include="Resources\muro\tareas\n_tareas.png" />
+    <Content Include="Resources\muro\whitecircle.png" />
+    <Content Include="Resources\muro\whitepop.png" />
+    <Content Include="Resources\openbts\btn_abrir-00.png" />
+    <Content Include="Resources\openbts\btn_abrir-01.png" />
+    <Content Include="Resources\openbts\btn_abrir-02.png" />
+    <Content Include="Resources\openbts\btn_abrir-03.png" />
+    <Content Include="Resources\ricons\estilo1_color1-01.png" />
+    <Content Include="Resources\ricons\estilo1_color1-02.png" />
+    <Content Include="Resources\ricons\estilo1_color1-03.png" />
+    <Content Include="Resources\ricons\estilo1_color1-04.png" />
+    <Content Include="Resources\ricons\estilo1_color1-05.png" />
+    <Content Include="Resources\ricons\estilo1_color1-06.png" />
+    <Content Include="Resources\ricons\estilo1_color1-07.png" />
+    <Content Include="Resources\ricons\estilo1_color2-01.png" />
+    <Content Include="Resources\ricons\estilo1_color2-02.png" />
+    <Content Include="Resources\ricons\estilo1_color2-03.png" />
+    <Content Include="Resources\ricons\estilo1_color2-04.png" />
+    <Content Include="Resources\ricons\estilo1_color2-05.png" />
+    <Content Include="Resources\ricons\estilo1_color2-06.png" />
+    <Content Include="Resources\ricons\estilo1_color2-07.png" />
+    <Content Include="Resources\ricons\estilo2_color1-01.png" />
+    <Content Include="Resources\ricons\estilo2_color1-02.png" />
+    <Content Include="Resources\ricons\estilo2_color1-03.png" />
+    <Content Include="Resources\ricons\estilo2_color1-04.png" />
+    <Content Include="Resources\ricons\estilo2_color1-05.png" />
+    <Content Include="Resources\ricons\estilo2_color1-06.png" />
+    <Content Include="Resources\ricons\estilo2_color1-07.png" />
+    <Content Include="Resources\ricons\estilo2_color2-01.png" />
+    <Content Include="Resources\ricons\estilo2_color2-02.png" />
+    <Content Include="Resources\ricons\estilo2_color2-03.png" />
+    <Content Include="Resources\ricons\estilo2_color2-04.png" />
+    <Content Include="Resources\ricons\estilo2_color2-05.png" />
+    <Content Include="Resources\ricons\estilo2_color2-06.png" />
+    <Content Include="Resources\ricons\estilo2_color2-07.png" />
+    <Content Include="Resources\ricons\estilo3_color1-01.png" />
+    <Content Include="Resources\ricons\estilo3_color1-02.png" />
+    <Content Include="Resources\ricons\estilo3_color1-03.png" />
+    <Content Include="Resources\ricons\estilo3_color1-04.png" />
+    <Content Include="Resources\ricons\estilo3_color1-05.png" />
+    <Content Include="Resources\ricons\estilo3_color1-06.png" />
+    <Content Include="Resources\ricons\estilo3_color1-07.png" />
+    <Content Include="Resources\ricons\estilo3_color2-01.png" />
+    <Content Include="Resources\ricons\estilo3_color2-02.png" />
+    <Content Include="Resources\ricons\estilo3_color2-03.png" />
+    <Content Include="Resources\ricons\estilo3_color2-04.png" />
+    <Content Include="Resources\ricons\estilo3_color2-05.png" />
+    <Content Include="Resources\ricons\estilo3_color2-06.png" />
+    <Content Include="Resources\ricons\estilo3_color2-07.png" />
+    <Content Include="Resources\ricons\estilo4_color1-01.png" />
+    <Content Include="Resources\ricons\estilo4_color1-02.png" />
+    <Content Include="Resources\ricons\estilo4_color1-03.png" />
+    <Content Include="Resources\ricons\estilo4_color1-04.png" />
+    <Content Include="Resources\ricons\estilo4_color1-05.png" />
+    <Content Include="Resources\ricons\estilo4_color1-06.png" />
+    <Content Include="Resources\ricons\estilo4_color1-07.png" />
+    <Content Include="Resources\ricons\estilo4_color2-01.png" />
+    <Content Include="Resources\ricons\estilo4_color2-02.png" />
+    <Content Include="Resources\ricons\estilo4_color2-03.png" />
+    <Content Include="Resources\ricons\estilo4_color2-04.png" />
+    <Content Include="Resources\ricons\estilo4_color2-05.png" />
+    <Content Include="Resources\ricons\estilo4_color2-06.png" />
+    <Content Include="Resources\ricons\estilo4_color2-07.png" />
+    <Content Include="Resources\ricons\tema5_colorblanco-01.png" />
+    <Content Include="Resources\ricons\tema5_colorblanco-02.png" />
+    <Content Include="Resources\ricons\tema5_colorblanco-03.png" />
+    <Content Include="Resources\ricons\tema5_colorblanco-04.png" />
+    <Content Include="Resources\ricons\tema5_colorblanco-05.png" />
+    <Content Include="Resources\ricons\tema5_colorblanco-06.png" />
+    <Content Include="Resources\ricons\tema5_colorblanco-07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Views\CreateAccountView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FirstView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LOView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Cirrious.CrossCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\win81\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.WindowsCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\win81\Cirrious.CrossCore.WindowsCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.5.1\lib\win81\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Community.Plugins.Sqlite">
+      <HintPath>..\packages\MvvmCross.Community.Plugin.Sqlite.3.1.1\lib\netcore45\Cirrious.MvvmCross.Community.Plugins.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Community.Plugins.Sqlite.WindowsStore">
+      <HintPath>..\packages\MvvmCross.Community.Plugin.Sqlite.3.1.1\lib\netcore45\x86\Cirrious.MvvmCross.Community.Plugins.Sqlite.WindowsStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\win81\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.File.3.5.1\lib\win81\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File.WindowsCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.File.3.5.1\lib\win81\Cirrious.MvvmCross.Plugins.File.WindowsCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.WindowsCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.5.1\lib\win81\Cirrious.MvvmCross.WindowsCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\portable-net45+wp8+win8+wpa\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\portable-net45+wp8+win8+wpa\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Mobile, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WindowsAzure.MobileServices.1.3.2\lib\netcore45\Microsoft.WindowsAzure.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Mobile.Ext, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WindowsAzure.MobileServices.1.3.2\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage">
+      <HintPath>..\packages\WindowsAzure.Storage.4.3.0\lib\win8\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\win8\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\win8\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.4\lib\portable-net45+wp8+win8+wpa\System.Spatial.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MLReader\MLRScroll\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MLearning.Core\MLearning.Core.csproj">
+      <Project>{5a3b79a2-507c-489b-9deb-4710a75677f3}</Project>
+      <Name>MLearning.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, version=12.0">
+      <Name>Microsoft Visual C++ 2013 Runtime Package for Windows</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.WinRT81, Version=3.11.0">
+      <Name>SQLite for Windows Runtime %28Windows 8.1%29</Name>
+    </SDKReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,189 @@
+﻿<views:MvxWindowsPage
+    x:Class="MLearning.Store.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MLearning.Store.Views"
+    xmlns:components="using:MLearning.Store.Components"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="using:Cirrious.MvvmCross.WindowsCommon.Views" 
+    mc:Ignorable="d">
+
+    <Grid >
+
+        <Viewbox>
+            <Grid x:Name="MainGrid" Width="1366" Height="768" >
+                <!--Background Image-->
+                <Grid >
+ 
+                    <Image Source="ms-appx:///Resources/brackgroundlogin.jpg" Stretch="UniformToFill"></Image>
+                    <components:MLFadeImage x:Name="BackgroundImage" ></components:MLFadeImage>
+                    <!--Image x:Name="LOBackgroundImage" Source="ms-appx:///Resources/muro/fondo.png" Opacity="0.0" Stretch="UniformToFill" /-->
+                </Grid>
+                 
+
+                <!--Background Brush>
+                <Grid x:Name="BackgroundBrush" >
+                    <Grid.Background>
+                        <LinearGradientBrush Opacity="0.6" StartPoint="0.5,0.0" EndPoint="0.5,1.0">
+                            <GradientStop Color="#3E3935" Offset="0.0"></GradientStop>
+                            <GradientStop Color="#1E1B1E" Offset="1.0"></GradientStop>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid -->
+ 
+                
+                <!--Content Grid-->
+                <Grid x:Name="ContentGrid" Width="1366" Height="768">
+
+                    <!--Menu Grid-->
+                    <Grid x:Name="MenuGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Width="82" Height="768">
+                        <Grid.RenderTransform>
+                            <CompositeTransform TranslateX="0" TranslateY="0" />
+                        </Grid.RenderTransform>
+                        <!-- x:Name="LogoImage" Source="ms-appx:///Resources/muro/logo.png" Width="50" Height="50" Margin="16,20,16,698"/-->
+                        <components:MLFadeImage x:Name="LogoFadeImage" BrushVisible="False"  Width="50" Height="50" Margin="16,20,16,698"  ></components:MLFadeImage>
+
+                        <Image x:Name="back" Tapped="back_Tapped" Source="ms-appx:///Resources/muro/tareas/btn_back.png" Width="50" Height="50" Margin="16,90,16,628"/>
+
+                        <Image x:Name="reload" Tapped="reload_Tapped" Source="ms-appx:///Resources/muro/tareas/btn_reload.png" Width="50" Height="50" Margin="16,160,16,558"/>
+
+                        <Border Width="50" Height="50" Margin="16,671,16,47" CornerRadius="25">
+                            <Border.Background>
+                                <ImageBrush x:Name="UserImageView" ImageSource="ms-appx:///Resources/muro/fondo.png" Stretch="UniformToFill" /> 
+                            </Border.Background> 
+                        </Border>
+                        
+                        <StackPanel Orientation="Vertical" Width="82" Height="32" VerticalAlignment="Bottom" Margin="0,0,0,10">
+                            <TextBlock x:Name="NameTextBlock" Foreground="White" Text="Name" Height="16" Width="82" TextAlignment="Center" FontSize="12"></TextBlock>
+                            <TextBlock x:Name="LastnameTextBlock" Foreground="White" Text="Lastname" Height="16" Width="82" TextAlignment="Center" FontSize="12"></TextBlock>
+                        </StackPanel>
+                        
+                    </Grid>
+
+                    <!--List Grid-->
+                    <Grid x:Name="ListGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Width="248" Height="768">
+                        <Grid.RenderTransform>
+                            <CompositeTransform TranslateX="82" TranslateY="0" />
+                        </Grid.RenderTransform>
+                        
+                        <!-- Search Grid -->
+                        <Grid Width="192" Height="42" VerticalAlignment="Top"  Margin="0,18,0,-18">
+                            <Image Source="ms-appx:///Resources/muro/searchback.png"></Image>
+                            <TextBox x:Name="SearchBox" Width="160" Background="Transparent" PlaceholderText="Buscar" BorderBrush="Transparent"
+                                     VerticalAlignment="Center" Height="30" Foreground="DarkGray"  HorizontalAlignment="Right" TextChanged="SearchBox_TextChanged"></TextBox>
+                        </Grid>
+
+                        <TextBlock Text="CÍRCULOS" Foreground="Gray" FontSize="15" FontWeight="Bold" Width="220" Height="24" Margin="0,80,0,664"></TextBlock>
+                        <TextBlock Text="PERSONAS" Foreground="Gray" FontSize="15" FontWeight="Bold" Width="220" Height="24" Margin="14,424,14,320" ></TextBlock>
+                        
+                        <!-- Circles grid -->
+                        <Grid x:Name="CirclesGrid" Width="248" Height="308" Background="Transparent" Margin="0,108,0,352" >
+                            <components:LoadingView x:Name="CirclesRing" BackOpacity="0" Width="160" Height="160" RingColor="Gray" RingWidth="28" ></components:LoadingView>
+                        </Grid>
+
+                        <!-- People grid -->
+                        <Grid x:Name="PeopleGrid" Width="248" Height="302" Background="Transparent" VerticalAlignment="Bottom" Margin="0,0,0,12">
+                            <components:LoadingView x:Name="PeopleRing" BackOpacity="0" Width="160" Height="160" RingColor="Gray" RingWidth="28" ></components:LoadingView>
+                        </Grid>
+
+                        <Grid Width="248" Height="50" Background="#4eb1df" Visibility="Collapsed">
+                            <StackPanel Width="230" Height="24" Orientation="Horizontal" >
+                                <Image Source="ms-appx:///Resources/muro/greencircle.png" Width="34" Height="14"></Image>
+                                <TextBlock Text="Zlatan Ibrahimovic" Foreground="White" FontSize="14" Width="180" Height="16"></TextBlock>
+                            </StackPanel> 
+                        </Grid>
+                        
+                            
+                    </Grid>
+
+
+                    <Image Visibility="Collapsed" Source="ms-appx:///Resources/muromock.png" Stretch="UniformToFill" Opacity="1.0" />
+
+                    <!--Detail Grid  Background="#FFFFFF" -->
+                    <Grid x:Name="DetailGrid"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="720" Height="768" >
+                        <Grid.RenderTransform>
+                            <CompositeTransform TranslateX="330" TranslateY="0" />
+                        </Grid.RenderTransform>
+                        
+                        <!-- Lineas -->
+                        <Image Source="ms-appx:///Resources/muro/tareas/linea.png" Stretch="Fill" Margin="30,69,30,698"></Image>
+                        <Image Source="ms-appx:///Resources/muro/tareas/linea.png" Stretch="Fill" Margin="30,316,30,451"></Image>
+                            
+                        <TextBlock x:Name="CircleNameText" Tapped="CircleNameText_Tapped" Text="Curso" FontSize="26" Foreground="Black" Width="483" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left"   Margin="48,28,0,0"></TextBlock>
+                        
+                        <TextBlock Text="Comentarios" FontSize="22" Foreground="Black" FontStretch="Expanded" Width="140" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="48,284,0,0"  ></TextBlock>
+
+                        <Grid x:Name="UnitGrid" Width="631" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="48,82,0,0"  >
+                            <TextBlock x:Name="UnitsText"  Text="Unidades" FontSize="22" Foreground="Black" FontStretch="Expanded" Height="30" ></TextBlock>
+                            <StackPanel x:Name="SingleUnitPanel" Visibility="Collapsed" Orientation="Horizontal">
+                                <TextBlock Tapped="Unidad_Tapped" Text="Unidad" FontSize="22" Foreground="Gray" FontStretch="Expanded" Height="30" ></TextBlock>
+                                <TextBlock Text=" > " Foreground="#85B727" FontSize="22" FontStretch="Expanded" Height="30" ></TextBlock>
+                                <TextBlock x:Name="UnitNameBlock" Text="Nombre Unidad" FontSize="22" Foreground="Black" FontStretch="Expanded" Height="30" ></TextBlock>
+                                <Grid Width="116" Tapped="Open_Tapped" >
+                                    <Image x:Name="OpenLOImage" Height="24" VerticalAlignment="Top" Source="ms-appx:///Resources/muro/tareas/btn_open.png"></Image>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                        <!-- MLOs Grid -->
+                        <Grid Background="Transparent" Margin="38,112,20,490"> 
+                            <components:LoadingView x:Name="MLOsRing" Width="662" Height="162" BackOpacity="0" RingColor="Gray" RingWidth="28" ></components:LoadingView>
+                            <Grid  x:Name="MLOsGrid" >
+                                
+                            </Grid>
+                        </Grid>
+                        
+                        <!--Commnets list h = 368-->
+                        <Grid  Margin="0,320,0,80" >
+                            <components:LoadingView x:Name="CommentsRing" Width="662" Height="162" BackOpacity="0" RingColor="Gray" RingWidth="28" ></components:LoadingView>
+                            <Grid x:Name="CircleCommentsGrid"></Grid>
+                            <Grid x:Name="MLOCommentsGrid" Visibility="Visible"></Grid>
+                        </Grid>
+
+                        <Image Stretch="Fill" Source="ms-appx:///Resources/muro/tareas/cboard.png" Margin="30,702,30,14" ></Image>
+                        <Image x:Name="DoComment" Tapped="DoComment_Tapped"  Source="ms-appx:///Resources/muro/tareas/btn_send.png" Margin="649,704,41,14" ></Image>
+                        <TextBox x:Name="NewCommentBox" TextWrapping="Wrap" BorderBrush="Transparent" Background="Transparent" PlaceholderText="Comment" VerticalAlignment="Center" Foreground="Gray" FontSize="14"  Margin="46,706,76,16"></TextBox>
+                        
+                    </Grid>
+
+                    <!--Homework Grid  Width="316" Height="768" -->
+                    <Grid x:Name="HomeworkGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="768">
+                        <Grid.RenderTransform>
+                            <CompositeTransform TranslateX="1050" TranslateY="0" />
+                        </Grid.RenderTransform>
+                        <!-- Title -->
+                        <TextBlock Margin="92,30,133,714" Text="TAREAS" FontSize="20" TextAlignment="Center"  ></TextBlock>
+                        <Image Margin="186,30,108,716" Source="ms-appx:///Resources/muro/tareas/btn_send.png" ></Image>
+                        <!-- Curso Unidad -->
+                        <Image x:Name="BarTarea" Margin="0,68,0,634" Source="ms-appx:///Resources/muro/tareas/barra_curso.png" ></Image>
+                        
+                        <TextBlock Margin="46,95,215,656" Text="CURSO" FontSize="14" TextAlignment="Center"></TextBlock>                        
+                        <TextBlock Margin="172,95,90,656" Text="UNIDAD" FontSize="14" TextAlignment="Center" ></TextBlock>
+                        <Image Margin="110,84,169,648" Source="ms-appx:///Resources/muro/tareas/circulo.png"></Image>
+                        <Image Margin="236,84,42,648" Source="ms-appx:///Resources/muro/tareas/circulo.png"></Image>
+                        <TextBlock x:Name="UnidadNumber" Text="?" TextAlignment="Center" FontSize="14" Margin="244,95,51,656"></TextBlock>
+                        <TextBlock x:Name="CursoNumber" Text="?" TextAlignment="Center" FontSize="14" Margin="118,95,176,656"></TextBlock>
+                        
+                        <!-- Pendientes h = 358 -->
+                        <TextBlock Margin="18,157,196,593" Text="PENDIENTES" FontSize="14" FontWeight="Bold"></TextBlock>
+                        <Image Source="ms-appx:///Resources/muro/tareas/linea.png" Stretch="UniformToFill" Margin="16,187,16,580"></Image>
+                        <Grid  Margin="0,192,0,218">
+                            <components:LoadingView x:Name="PendingRing" BackOpacity="0" Width="160" Height="160" RingColor="Gray" RingWidth="28" ></components:LoadingView>
+                            <Grid x:Name="PendingGrid" ></Grid>
+                        </Grid>
+                        
+                        <!-- Completas h = 160 -->
+                        <TextBlock Margin="18,565,189,186" Text="COMPLETADAS" FontSize="14" FontWeight="Bold"></TextBlock>
+                        <Image Source="ms-appx:///Resources/muro/tareas/linea.png" Stretch="UniformToFill" Margin="16,592,16,175" ></Image>
+                        <Grid  Margin="0,598,0,10" >
+                            <components:LoadingView x:Name="CompleteRing" BackOpacity="0" Width="160" Height="160" RingColor="Gray" RingWidth="28" ></components:LoadingView>
+                            <Grid x:Name="CompleteGrid" ></Grid>
+                        </Grid>
+                    </Grid> 
+                </Grid>
+
+            </Grid>
+        </Viewbox>
+
+    </Grid>
+</views:MvxWindowsPage>
