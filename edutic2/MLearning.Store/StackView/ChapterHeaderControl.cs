@@ -36,7 +36,7 @@ namespace StackView
 
         public string Author
         {
-            set { _tags.Text = "Autor : " + value; }
+            set { _tags.Text = "Beyond Badr"; }
             get { return _author.Text; }
         }
 

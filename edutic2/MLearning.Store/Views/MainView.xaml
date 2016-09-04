@@ -70,12 +70,12 @@
                         <!-- Search Grid -->
                         <Grid Width="192" Height="42" VerticalAlignment="Top"  Margin="0,18,0,-18">
                             <Image Source="ms-appx:///Resources/muro/searchback.png"></Image>
-                            <TextBox x:Name="SearchBox" Width="160" Background="Transparent" PlaceholderText="Buscar" BorderBrush="Transparent"
+                            <TextBox x:Name="SearchBox" Width="160" Background="Transparent" PlaceholderText="Search" BorderBrush="Transparent"
                                      VerticalAlignment="Center" Height="30" Foreground="DarkGray"  HorizontalAlignment="Right" TextChanged="SearchBox_TextChanged"></TextBox>
                         </Grid>
 
-                        <TextBlock Text="CÍRCULOS" Foreground="Gray" FontSize="15" FontWeight="Bold" Width="220" Height="24" Margin="0,80,0,664"></TextBlock>
-                        <TextBlock Text="PERSONAS" Foreground="Gray" FontSize="15" FontWeight="Bold" Width="220" Height="24" Margin="14,424,14,320" ></TextBlock>
+                        <TextBlock Text="INDEX" Foreground="Gray" FontSize="15" FontWeight="Bold" Width="220" Height="24" Margin="0,80,0,664"></TextBlock>
+                        <TextBlock Text="FANS" Foreground="Gray" FontSize="15" FontWeight="Bold" Width="220" Height="24" Margin="14,424,14,320" ></TextBlock>
                         
                         <!-- Circles grid -->
                         <Grid x:Name="CirclesGrid" Width="248" Height="308" Background="Transparent" Margin="0,108,0,352" >
@@ -110,14 +110,14 @@
                         <Image Source="ms-appx:///Resources/muro/tareas/linea.png" Stretch="Fill" Margin="30,69,30,698"></Image>
                         <Image Source="ms-appx:///Resources/muro/tareas/linea.png" Stretch="Fill" Margin="30,316,30,451"></Image>
                             
-                        <TextBlock x:Name="CircleNameText" Tapped="CircleNameText_Tapped" Text="Curso" FontSize="26" Foreground="Black" Width="483" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left"   Margin="48,28,0,0"></TextBlock>
+                        <TextBlock x:Name="CircleNameText" Tapped="CircleNameText_Tapped" Text="Beyond Badr" FontSize="26" Foreground="Black" Width="483" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left"   Margin="48,28,0,0"></TextBlock>
                         
-                        <TextBlock Text="Comentarios" FontSize="22" Foreground="Black" FontStretch="Expanded" Width="140" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="48,284,0,0"  ></TextBlock>
+                        <TextBlock Text="Forum" FontSize="22" Foreground="Black" FontStretch="Expanded" Width="140" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="48,284,0,0"  ></TextBlock>
 
                         <Grid x:Name="UnitGrid" Width="631" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="48,82,0,0"  >
-                            <TextBlock x:Name="UnitsText"  Text="Unidades" FontSize="22" Foreground="Black" FontStretch="Expanded" Height="30" ></TextBlock>
+                            <TextBlock x:Name="UnitsText"  Text="Content" FontSize="22" Foreground="Black" FontStretch="Expanded" Height="30" ></TextBlock>
                             <StackPanel x:Name="SingleUnitPanel" Visibility="Collapsed" Orientation="Horizontal">
-                                <TextBlock Tapped="Unidad_Tapped" Text="Unidad" FontSize="22" Foreground="Gray" FontStretch="Expanded" Height="30" ></TextBlock>
+                                <TextBlock Tapped="Unidad_Tapped" Text="Content" FontSize="22" Foreground="Gray" FontStretch="Expanded" Height="30" ></TextBlock>
                                 <TextBlock Text=" > " Foreground="#85B727" FontSize="22" FontStretch="Expanded" Height="30" ></TextBlock>
                                 <TextBlock x:Name="UnitNameBlock" Text="Nombre Unidad" FontSize="22" Foreground="Black" FontStretch="Expanded" Height="30" ></TextBlock>
                                 <Grid Width="116" Tapped="Open_Tapped" >
@@ -152,20 +152,20 @@
                             <CompositeTransform TranslateX="1050" TranslateY="0" />
                         </Grid.RenderTransform>
                         <!-- Title -->
-                        <TextBlock Margin="92,30,133,714" Text="TAREAS" FontSize="20" TextAlignment="Center"  ></TextBlock>
+                        <TextBlock Margin="92,30,133,714" Text="FANS" FontSize="20" TextAlignment="Center"  ></TextBlock>
                         <Image Margin="186,30,108,716" Source="ms-appx:///Resources/muro/tareas/btn_send.png" ></Image>
                         <!-- Curso Unidad -->
                         <Image x:Name="BarTarea" Margin="0,68,0,634" Source="ms-appx:///Resources/muro/tareas/barra_curso.png" ></Image>
                         
-                        <TextBlock Margin="46,95,215,656" Text="CURSO" FontSize="14" TextAlignment="Center"></TextBlock>                        
-                        <TextBlock Margin="172,95,90,656" Text="UNIDAD" FontSize="14" TextAlignment="Center" ></TextBlock>
+                        <TextBlock Margin="46,95,215,656" Text="BADR" FontSize="14" TextAlignment="Center"></TextBlock>                        
+                        <TextBlock Margin="172,95,90,656" Text="UHUD" FontSize="14" TextAlignment="Center" ></TextBlock>
                         <Image Margin="110,84,169,648" Source="ms-appx:///Resources/muro/tareas/circulo.png"></Image>
                         <Image Margin="236,84,42,648" Source="ms-appx:///Resources/muro/tareas/circulo.png"></Image>
                         <TextBlock x:Name="UnidadNumber" Text="?" TextAlignment="Center" FontSize="14" Margin="244,95,51,656"></TextBlock>
                         <TextBlock x:Name="CursoNumber" Text="?" TextAlignment="Center" FontSize="14" Margin="118,95,176,656"></TextBlock>
                         
                         <!-- Pendientes h = 358 -->
-                        <TextBlock Margin="18,157,196,593" Text="PENDIENTES" FontSize="14" FontWeight="Bold"></TextBlock>
+                        <TextBlock Margin="18,157,196,593" Text="ONLINE" FontSize="14" FontWeight="Bold"></TextBlock>
                         <Image Source="ms-appx:///Resources/muro/tareas/linea.png" Stretch="UniformToFill" Margin="16,187,16,580"></Image>
                         <Grid  Margin="0,192,0,218">
                             <components:LoadingView x:Name="PendingRing" BackOpacity="0" Width="160" Height="160" RingColor="Gray" RingWidth="28" ></components:LoadingView>
@@ -173,7 +173,7 @@
                         </Grid>
                         
                         <!-- Completas h = 160 -->
-                        <TextBlock Margin="18,565,189,186" Text="COMPLETADAS" FontSize="14" FontWeight="Bold"></TextBlock>
+                        <TextBlock Margin="18,565,189,186" Text="OFFLINE" FontSize="14" FontWeight="Bold"></TextBlock>
                         <Image Source="ms-appx:///Resources/muro/tareas/linea.png" Stretch="UniformToFill" Margin="16,592,16,175" ></Image>
                         <Grid  Margin="0,598,0,10" >
                             <components:LoadingView x:Name="CompleteRing" BackOpacity="0" Width="160" Height="160" RingColor="Gray" RingWidth="28" ></components:LoadingView>

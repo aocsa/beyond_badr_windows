@@ -199,9 +199,9 @@ namespace MLearning.Core.Services
         public async Task<List<lo_by_circle>> GetLOByCircleAndUser(int circleid,int userid)
         {
             #if (WEB)
-               return await _repositoryService.SearchForAsync<lo_by_circle>(l => l.Circle_id == circleid && l.User_id==userid, l => l.updated_at, l => l.id, false);
+               return await _repositoryService.SearchForAsync<lo_by_circle>(l => l.Circle_id == circleid, l => l.updated_at, l => l.id, false);
             #else
-               return await _repositoryService.SearchForAsync<lo_by_circle>(l => l.Circle_id == circleid && l.User_id==userid, l => l.updated_at, l => l.id, false);
+               return await _repositoryService.SearchForAsync<lo_by_circle>(l => l.Circle_id == circleid , l => l.updated_at, l => l.id, false);
             #endif
         }
 
@@ -651,13 +651,14 @@ namespace MLearning.Core.Services
         public async Task<int> TryCreateUser(string socialID, int idInstitution)
         {
             //Backend logic: sets username and user image_url
-            User myuser = new User { social_id = socialID };
+            User myuser = new User { social_id = socialID, name = "", lastname = "", username = "" };
 
-            //await _repositoryService.InsertAsync<User>(myuser);
-
-           //var result = await CreateAccount<User>(myuser, u => u.id, UserType.Consumer);
-            var result = await CreateAndRegisterConsumer(myuser, idInstitution);
-           return result.id;
+           
+              //  await _repositoryService.InsertAsync<User>(myuser);
+            
+            var result = await CreateAccount<User>(myuser, u => u.id, UserType.Consumer);
+            //var result = await CreateAndRegisterConsumer(myuser, idInstitution);
+            return result.id;
         }
 
 

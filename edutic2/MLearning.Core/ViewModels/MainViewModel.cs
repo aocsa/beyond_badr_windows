@@ -350,7 +350,10 @@ namespace MLearning.Core.ViewModels
         public ObservableCollection<quiz_by_circle> QuizzesList
         {
             get { return _quizzesList; }
-            set { _quizzesList = value; RaisePropertyChanged("QuizzesList"); UpdatePendingAndDone(_quizzesList); }
+            set { _quizzesList = value; RaisePropertyChanged("QuizzesList"); 
+				// TODO no quizzes
+				// UpdatePendingAndDone(_quizzesList); 
+			}
         }
 
 
@@ -1123,7 +1126,7 @@ namespace MLearning.Core.ViewModels
         async private void LoadUserInfo()
         {
             SharedPreferences prefs = Constants.GetSharedPreferences(Constants.PreferencesFileName);
-
+            
             UserFirstName = prefs.GetString(Constants.UserFirstNameKey);
             UserLastName = prefs.GetString(Constants.UserLastNameKey);
             string image_url = prefs.GetString(Constants.UserImageUrlKey);
@@ -1208,8 +1211,11 @@ namespace MLearning.Core.ViewModels
 
 
              await BlockDownload.TryPutBytesInVector<MLearning.Core.ViewModels.MainViewModel.lo_by_circle_wrapper>(LearningOjectsList.ToList(),
-                   (pos, bytes) => { if (pos < LearningOjectsList.Count) LearningOjectsList[pos].background_bytes = bytes; },
-                   (lo) => { return lo.lo.url_background; }
+                   (pos, bytes) => { 
+						if (pos < LearningOjectsList.Count) 
+						LearningOjectsList[pos].background_bytes = bytes; 
+					},
+                   	(lo) => { return lo.lo.url_background; }
                   );
 
 
@@ -1285,6 +1291,15 @@ namespace MLearning.Core.ViewModels
                   list[pos].cover_bytes = bytes;
               },
                (lo) => { return lo.lo.url_cover; });
+
+
+			await BlockDownload.TryPutBytesInVector<lo_by_circle_wrapper>(list.ToList(), (pos, bytes) =>
+				{
+					if(pos<list.Count)
+						list[pos].background_bytes = bytes;
+				},
+				(lo) => { return lo.lo.url_background; });
+			
 
             
 

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="6165tvareid.Edutic" Publisher="CN=2D4E7806-97D7-41BC-8CEB-7004B4C391E9" Version="1.1.0.8" />
+  <Identity Name="6165tvareid.BeyondBadr" Publisher="CN=2D4E7806-97D7-41BC-8CEB-7004B4C391E9" Version="1.1.0.8" />
   <Properties>
-    <DisplayName>Edutic</DisplayName>
+    <DisplayName>BeyondBadr</DisplayName>
     <PublisherDisplayName>tvareid</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -15,10 +15,10 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MLearning.Store.App">
-      <m2:VisualElements DisplayName="EDuTic" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="EDutTic es una plataforma de aprendizaje adaptativo con el objetivo de redefinir el aprendizaje móvil, es decir, un modelo de aprendizaje que se amolda a las necesidades, modos de resolver problemas y jerarquía de elementos que se asemejan a las características de cada estudiante de forma inteligente, analizando la información que brinda el uso de la plataforma y generando una retroalimentación para poder sugerir los contenidos que se adapten a los requerimientos educativos individuales. La plataforma gestiona los contenidos de cada institución, por materias y divididos en sesiones. Para poder acceder a esta aplicacion utilizar los siguientes datos: User : &quot;aocsa&quot; y Password: &quot;1&quot;" ForegroundText="light" BackgroundColor="#464646">
+      <m2:VisualElements DisplayName="Beyond Badr" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="EDutTic es una plataforma de aprendizaje adaptativo con el objetivo de redefinir el aprendizaje móvil, es decir, un modelo de aprendizaje que se amolda a las necesidades, modos de resolver problemas y jerarquía de elementos que se asemejan a las características de cada estudiante de forma inteligente, analizando la información que brinda el uso de la plataforma y generando una retroalimentación para poder sugerir los contenidos que se adapten a los requerimientos educativos individuales. La plataforma gestiona los contenidos de cada institución, por materias y divididos en sesiones. Para poder acceder a esta aplicacion utilizar los siguientes datos: User : &quot;aocsa&quot; y Password: &quot;1&quot;" ForegroundText="light" BackgroundColor="#464646">
         <m2:DefaultTile Square310x310Logo="Assets\310.png" Wide310x150Logo="Assets\310x150.png" Square70x70Logo="Assets\70.png">
         </m2:DefaultTile>
-        <m2:SplashScreen Image="Assets/finalsplash0.png" BackgroundColor="#0093A6" />
+        <m2:SplashScreen Image="Assets/finalsplash0.png" BackgroundColor="#E55353" />
         <m2:InitialRotationPreference>
           <m2:Rotation Preference="landscape" />
           <m2:Rotation Preference="landscapeFlipped" />

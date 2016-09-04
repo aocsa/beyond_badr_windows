@@ -1,0 +1,5 @@
+MainPackage=C:\EduticNow_Windows\edutic2\MLearning.Store\bin\x86\Release\MLearning.Store_1.1.0.8_Bundle\MLearning.Store_1.1.0.8_x86.appx
+SymbolPackage=C:\EduticNow_Windows\edutic2\MLearning.Store\AppPackages\MLearning.Store_1.1.0.8_Test\MLearning.Store_1.1.0.8_x86.appxsym
+ResourcePack=C:\EduticNow_Windows\edutic2\MLearning.Store\bin\x86\Release\MLearning.Store_1.1.0.8_Bundle\MLearning.Store_1.1.0.8_language-es.appx
+ResourcePack=C:\EduticNow_Windows\edutic2\MLearning.Store\bin\x86\Release\MLearning.Store_1.1.0.8_Bundle\MLearning.Store_1.1.0.8_scale-140.appx
+ResourcePack=C:\EduticNow_Windows\edutic2\MLearning.Store\bin\x86\Release\MLearning.Store_1.1.0.8_Bundle\MLearning.Store_1.1.0.8_scale-180.appx

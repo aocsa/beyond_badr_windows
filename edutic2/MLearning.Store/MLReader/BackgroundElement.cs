@@ -50,7 +50,7 @@ namespace MLReader
             Children.Add(_backimage);
             Background = new SolidColorBrush(Colors.Transparent);
 
-            _blackgrid = new Grid() { Width = DeviceWidth, Height = DeviceHeight, Background = new SolidColorBrush(Colors.Black), Opacity = 0.0 };
+            _blackgrid = new Grid() { Width = DeviceWidth, Height = DeviceHeight, Background = new SolidColorBrush(Colors.Black), Opacity = 1.0 };
             Children.Add(_blackgrid);
         }
 

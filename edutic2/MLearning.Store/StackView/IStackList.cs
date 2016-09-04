@@ -349,6 +349,8 @@ namespace StackView
 
         public void OpenStack(int index)
         {
+            if (_stacksvector.Count == 0)
+                return;
             for (int i = 0; i < _stacksvector.Count; i++)
             {
                 if (_stacksvector[i].IsOpen)

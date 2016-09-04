@@ -127,22 +127,22 @@ namespace MLearning.Store.Components
             _commentgrid.Children.Add(commentimage);
 
             double initpos = 286.0;
-            Grid button1 = getnewtextbt("Perfil", initpos);
+            Grid button1 = getnewtextbt("Beyond Badr: Introducing the first epic battle in Islam!", initpos);
             button1.Tapped += button1_Tapped;
             _buttonsgrid.Children.Add(button1);
             //2
             initpos += 132;
-            Grid button2 = getnewtextbt("Showcase", initpos);
+            Grid button2 = getnewtextbt(" ", initpos);
             button2.Tapped += button2_Tapped;
             _buttonsgrid.Children.Add(button2);
             //3
             initpos += 132;
-            Grid button3 = getnewtextbt("Articulo", initpos);
+            Grid button3 = getnewtextbt(" ", initpos);
             button3.Tapped += button3_Tapped;
             _buttonsgrid.Children.Add(button3);
             //4
             initpos += 132;
-            Grid button4 = getnewtextbt("Archivos", initpos);
+            Grid button4 = getnewtextbt(" ", initpos);
             button4.Tapped += button4_Tapped;
             _buttonsgrid.Children.Add(button4);
 
@@ -169,7 +169,7 @@ namespace MLearning.Store.Components
         {
             Grid g = new Grid()
             {
-                Width = 132,
+                Width = 500,
                 Height = 28,
                 Background = new SolidColorBrush(Colors.Transparent),
                 RenderTransform = new TranslateTransform() { X = x },

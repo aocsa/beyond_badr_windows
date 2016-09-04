@@ -77,7 +77,7 @@ namespace MLReader
                 Width = 786,  
                 TextAlignment = Windows.UI.Xaml.TextAlignment.Right,
                 TextWrapping = Windows.UI.Xaml.TextWrapping.Wrap,
-                FontSize = 33,
+                FontSize = 20,
                 FontWeight = Windows.UI.Text.FontWeights.Light, 
             };
             _container.Children.Add(_contentblock);
@@ -98,8 +98,17 @@ namespace MLReader
         {
             if (Source != null)
             {
-                _titleblock.Text = _source.Title.ToUpper();
-                _contentblock.Text = _source.Paragraph;
+                if (_source.Title.ToString().Contains("@"))
+                {
+                    _titleblock.Text = "";
+                    _contentblock.Text = "";
+
+                }
+                else
+                {
+                    _titleblock.Text = _source.Title.ToUpper();
+                    _contentblock.Text = _source.Paragraph;
+                }
                 _titleblock.Foreground = new SolidColorBrush(Source.Style.TitleColor);
                 _contentblock.Foreground = new SolidColorBrush(Source.Style.ContentColor);
 

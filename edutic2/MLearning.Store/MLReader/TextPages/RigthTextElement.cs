@@ -149,7 +149,8 @@ namespace MLReader
         {
             if (Source != null)
             {
-                _titleblock.Text = _source.Title;
+                if (Source.Title != null)
+                    _titleblock.Text = _source.Title;
                 _contentblock.Text = _source.Paragraph;
                 _titleblock.Foreground = new SolidColorBrush(Source.Style.TitleColor);
                 _contentblock.Foreground = new SolidColorBrush(Source.Style.ContentColor);

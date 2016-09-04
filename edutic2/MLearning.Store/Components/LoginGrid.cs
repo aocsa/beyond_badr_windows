@@ -32,13 +32,16 @@ namespace MLearning.Store.Components
 
             inittext();
             initlogo();
+
             initlogin();
+            
             //initregister();
             
+
         }
 
         #region Login Properties
-         
+
         TextBox _userBox;
         public TextBox UserTextBox { get { return _userBox; } }
 
@@ -47,6 +50,10 @@ namespace MLearning.Store.Components
 
         Grid _dologin;
         public Grid DoLogin { get { return _dologin; } }
+
+
+        Grid _dologinWithFacebook;
+        public Grid DoLoginWithFacebook { get { return _dologinWithFacebook; } }
 
 
         #endregion
@@ -99,22 +106,32 @@ namespace MLearning.Store.Components
 
         void initlogin()
         {
-            _logingrid = new Grid() { Width = 268, Height = 268, Opacity = 0.0 };
+            _logingrid = new Grid() { Width = 500, Height = 268, Opacity = 0.0 };
             this.Children.Add(_logingrid);
-            _logingrid.Children.Add(getbackimage());
+            //_logingrid.Children.Add(getbackimage());
             //header
-            _logingrid.Children.Add(getTextBlock(67,50,134,60, "Iniciar sesión en Aplicación")); 
+            _logingrid.Children.Add(getTextBlock(0,40,500,90, "Welcome to 2 Hijri (624 CE)...  We embark on a journey that will portray the Rise of the Islamic Golden Ages!", 18));
+
+            _dologinWithFacebook = getFacebookButton(507 / 2.3, 80 / 2.3, 45+80, 100);
+            _logingrid.Children.Add(_dologinWithFacebook);
+
+            _logingrid.Children.Add(getTextBlock(40 + 70, 150, 250, 90, "Connect with your friends on social media. Want more information about the Comic"));
             //separators
-            _logingrid.Children.Add(getSeparator(34,158, 200));
-            _logingrid.Children.Add(getSeparator(34,206,200));
+            //_logingrid.Children.Add(getSeparator(34,158, 200));
+            //_logingrid.Children.Add(getSeparator(34,206,200));
+
             //textinput
-            _userBox = getTextBox(24, 124, 200, 36, "Usuario");
+            /*_userBox = getTextBox(24, 124, 200, 36, "Usuario");
             _passBox = getTextBox(24, 170, 200, 36, "Contraseña");
             _logingrid.Children.Add(_userBox); 
-            _logingrid.Children.Add(_passBox); 
+            _logingrid.Children.Add(_passBox);*/
+
             //roundbutton
-            _dologin = getRoundButton(30, 30, 210, 170); 
-            _logingrid.Children.Add(_dologin);
+            //_dologin = getRoundButton(30, 30, 210, 170); 
+            //_logingrid.Children.Add(_dologin);
+
+            //roundbutton
+
 
             //animaciones
             _logintransform = new CompositeTransform();
@@ -134,14 +151,15 @@ namespace MLearning.Store.Components
             storyboard.Begin();
         } 
 
-        TextBlock getTextBlock( double x, double y, double width, double height, string text )
+        TextBlock getTextBlock( double x, double y, double width, double height, string text, int fontsize = 16 )
         {
             TextBlock tb = new TextBlock() { Width =  width, Height =  height, FontWeight = FontWeights.SemiLight,
+                TextAlignment = TextAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Top, HorizontalAlignment = HorizontalAlignment.Left ,
                                              TextWrapping = TextWrapping.Wrap,
-                                             Foreground = new SolidColorBrush(ColorHelper.FromArgb(255, 90, 90, 90)),
+                                             Foreground = new SolidColorBrush(ColorHelper.FromArgb(255, 190, 190, 190)),
                                              Text = text,
-                                             FontSize = 22
+                                             FontSize = fontsize
             };
             tb.RenderTransform = new CompositeTransform() { TranslateX = x, TranslateY =  y };
             return tb;
@@ -179,6 +197,25 @@ namespace MLearning.Store.Components
             ig.Children.Add(img);
             return ig;
         }
+
+        Grid getFacebookButton(double width, double height, double x, double y)
+        {
+            Grid ig = new Grid()
+            {
+                VerticalAlignment = VerticalAlignment.Top,
+                HorizontalAlignment = HorizontalAlignment.Left,
+                Width = width,
+                Height = height,
+                RenderTransform = new TranslateTransform() { X = x, Y = y }
+            };
+            Image img = new Image();
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.UriSource = new Uri("ms-appx:///Resources/signupface.png", UriKind.Absolute);
+            img.Source = bitmapImage;
+            ig.Children.Add(img);
+            return ig;
+        }
+
 
         Image getbackimage()
         {
@@ -238,7 +275,7 @@ namespace MLearning.Store.Components
             _text_lt = new TextBlock()
             {
                 FontSize = 18,
-                Text = "EDuTic",
+                Text = "Beyond Badr",
                 Width = 120,
                 Height = 50,
                 TextAlignment = TextAlignment.Left,
@@ -250,7 +287,7 @@ namespace MLearning.Store.Components
             _text_rt = new TextBlock()
             {
                 FontSize = 18,
-                Text = "Más sobre ...",
+                Text = " ",
                 Width = 140,
                 Height = 50,
                 TextAlignment = TextAlignment.Right,
@@ -262,7 +299,7 @@ namespace MLearning.Store.Components
             _text_rb = new TextBlock()
             {
                 FontSize = 14,
-                Text = "EDuTic en la educación para personalizar y maximizar el aprendizaje",
+                Text = "Introducing the first epic battle in Islam!",
                 Width = 640,
                 Height = 30,
                 TextAlignment = TextAlignment.Right,

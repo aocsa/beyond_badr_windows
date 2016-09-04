@@ -181,7 +181,7 @@ namespace MLearning.Core
 				MLearningDB.User newuser = new MLearningDB.User { email = Email, username = RegUsername, password = EncryptionService.encrypt(RegPassword), name = Name, lastname = ":)", image_url = "http://www.clinicatorielli.com/img/icons/no-user.png" ,created_at = DateTime.Now, updated_at = DateTime.Now };
 
 
-				int idInstitution = 34;
+				int idInstitution = 1;
 				newuser.password = EncryptionService.encrypt(newuser.password);
 				bool exists = await _mLearningService.CheckIfExistsNoLocale<MLearningDB.User>
 					(usr => usr.username == newuser.username, (it) => it.updated_at, it => it.id);

@@ -46,7 +46,7 @@ namespace Core.Repositories
 		{
 
 			UseLocalDBWhenOffline = true;
-			MobileService = new MobileServiceClient("https://eduticservice2016.azure-mobile.net/", "EHmeLHXJUiWhHBHYYAoOtsYJLwSZWh33");
+			MobileService = new MobileServiceClient("https://eduticservice2016-3.azure-mobile.net/", "dYypEXvwIrEqHAIojawdlOSORpbKZx54");
 			//MobileService = new MobileServiceClient("https://mlearningservice.azure-mobile.net/", "xIAzBqsUDUutvnCTruCwpCozkkyNkj33");
 			//	MobileService = new MobileServiceClient("https://eduticservice.azure-mobile.net/", "dbKHHcwqYgLERWaOCVSHfccSQIWSKv93");
 			_liteConnection = factory.Create(Constants.LocalDbName);
@@ -69,7 +69,7 @@ namespace Core.Repositories
 		{
 
 			//    CurrentPlatform.Init();
-			MobileService = new MobileServiceClient("https://eduticservice2016.azure-mobile.net/", "EHmeLHXJUiWhHBHYYAoOtsYJLwSZWh33");
+			MobileService = new MobileServiceClient("https://eduticservice2016-3.azure-mobile.net/", "dYypEXvwIrEqHAIojawdlOSORpbKZx54");
 			//MobileService = new MobileServiceClient("https://mlearningservice.azure-mobile.net/", "xIAzBqsUDUutvnCTruCwpCozkkyNkj33");
 			//MobileService = new MobileServiceClient("https://eduticservice.azure-mobile.net/", "dbKHHcwqYgLERWaOCVSHfccSQIWSKv93");
 
@@ -102,8 +102,8 @@ namespace Core.Repositories
 			}
 			catch (MobileServiceInvalidOperationException e)
 			{
-
-				throw;
+                Mvx.Trace(e.Message);
+                throw;
 			}
 			catch (NullReferenceException nref)
 			{
@@ -115,8 +115,15 @@ namespace Core.Repositories
 
 		public async Task InsertAsync<T>(T entity, Dictionary<string, string> parameters)
 		{
-			await MobileService.GetTable<T>().InsertAsync(entity,parameters);
-		}
+            try
+            {
+                await MobileService.GetTable<T>().InsertAsync(entity, parameters);
+            }
+            catch (Exception nref)
+            {
+                Mvx.Trace(nref.Message);
+            }
+        }
 
 		public async System.Threading.Tasks.Task DeleteAsync<T>(T entity)
 		{

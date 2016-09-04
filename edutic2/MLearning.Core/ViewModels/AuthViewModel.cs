@@ -150,7 +150,7 @@ namespace MLearning.Core.ViewModels
 
 		async void DoCreateUserCommand(MobileServiceUser mobile)
 		{
-			int user_id = await _mLearningService.TryCreateUser(mobile.UserId, 34);
+			int user_id = await _mLearningService.TryCreateUser(mobile.UserId, 1);
 
 			SessionService.LogIn(user_id, mobile.UserId, mobile.MobileServiceAuthenticationToken);
 

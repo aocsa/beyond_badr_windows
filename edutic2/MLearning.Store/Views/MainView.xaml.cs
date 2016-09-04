@@ -124,7 +124,7 @@ namespace MLearning.Store.Views
                     resetPendingQuizzes();
                     break;
                 case "CompletedQuizzesList":
-                    resetCompleteQuizzes();
+                    //resetCompleteQuizzes();
                     break;
                 case "BackgroundImage":
                     resetbackground() ;
@@ -282,7 +282,7 @@ namespace MLearning.Store.Views
                         SelectOnImage = "ms-appx:///Resources/muro/greencircle.png",
                         SelectOffImage = "ms-appx:///Resources/muro/whitecircle.png",
                         IsSelected = false,
-                        ContentBlock = vm.UsersList[i].user.name +" "+  vm.UsersList[i].user.lastname,
+                        ContentBlock = vm.UsersList[i].user.name,
                         IsOn = true,
                         InfoColor = StaticStyles.DefaultColor
                     };

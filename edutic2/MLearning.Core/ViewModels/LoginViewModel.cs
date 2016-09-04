@@ -194,7 +194,7 @@ namespace Core.ViewModels
 
         async void DoCreateUserCommand(MobileServiceUser mobile)
         {
-            int user_id = await _mLearningService.TryCreateUser(mobile.UserId,34);
+            int user_id = await _mLearningService.TryCreateUser(mobile.UserId, 1);
 
             SessionService.LogIn(user_id, mobile.UserId, mobile.MobileServiceAuthenticationToken);
 
@@ -531,7 +531,7 @@ namespace Core.ViewModels
 				MLearningDB.User newuser = new MLearningDB.User { email = Email, username = RegUsername, password = EncryptionService.encrypt(RegPassword), name = Name, lastname = Lastname, image_url=UserImageUrl,created_at = DateTime.Now, updated_at = DateTime.Now };
 
 
-				int idInstitution = 34;
+				int idInstitution = 1;
 				newuser.password = EncryptionService.encrypt(newuser.password);
 				bool exists = await _mLearningService.CheckIfExistsNoLocale<MLearningDB.User>
 					(usr => usr.username == newuser.username, (it) => it.updated_at, it => it.id);

@@ -26,8 +26,11 @@ namespace MLearningDB
         public string image_url { get; set; }
         public int is_online { get; set; }
         public string social_id { get; set; }
-        public bool C__deleted { get; set; }
+        public bool __deleted { get; set; }
         public string passwordt { get; set; }
+
+        public bool C__deleted { get; set; }
+
 
     }
 }
